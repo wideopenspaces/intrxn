@@ -1,5 +1,5 @@
-RSpec.describe Interflow do
+RSpec.describe Intrxn do
   it "has a version number" do
-    expect(Interflow::VERSION).not_to be nil
+    expect(Intrxn::VERSION).not_to be nil
   end
 end
