@@ -35,7 +35,7 @@ module Intrxn
     # -> promises :bar
     #
     # will raise an error if context does not include the specified key(s)
-    # after the #process method has finished executing.
+    # after the `#process` method has finished executing.
     # To enable this check, either call `super` on the last line of
     # your `process` method, or directly call
     # `validate_presence_of_promised_values(context)`
