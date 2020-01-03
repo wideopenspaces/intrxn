@@ -1,8 +1,8 @@
-class TestWorkFlow < Interflow::Workflow
+class TestWorkFlow < Intrxn::Workflow
   interactions :test_me, :fix_me, :make_me_fast, prefix: 'test'
 end
 
-RSpec.describe Interflow::Workflow do
+RSpec.describe Intrxn::Workflow do
   context 'at class level' do
     subject { TestWorkFlow }
 

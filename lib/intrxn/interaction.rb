@@ -1,20 +1,20 @@
-module Interflow
+module Intrxn
   class Interaction
     attr_reader :context
 
     # Define required elements in the context hash.
     #
-    # -> needs :transport, :user
+    # -> needs :foo, :bar
     #
-    # will create an accessor method named 'transport' that
-    # provides access to context[:transport] and also raise an error
-    # if the key `:transport` is not included in the context hash,
+    # will create an accessor method named 'foo' that
+    # provides access to context[:foo] and also raise an error
+    # if the key `:foo` is not included in the context hash,
     #
-    # In addition, if `:transport` does not contain a value when
+    # In addition, if `:foo` does not contain a value when
     # the interaction is initialized, an error will be raised.
     # This check can be turned off:
     #
-    # -> needs :route, allow_nil: true
+    # -> needs :foo, allow_nil: true
     #
     def self.needs(*requirements)
       @required_values ||= []
@@ -32,7 +32,7 @@ module Interflow
 
     # Define elements the Interaction promises to add to the context
     #
-    # -> promises :route
+    # -> promises :bar
     #
     # will raise an error if context does not include the specified key(s)
     # after the #process method has finished executing.
@@ -137,7 +137,7 @@ module Interflow
 
     def log(msg, color = nil, &_block)
       msg = msg.send(color) if color
-      Interflow.logger.info msg
+      Intrxn.logger.info msg
       yield if block_given?
     end
   end

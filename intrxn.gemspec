@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "interflow/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "interflow"
-  spec.version       = Interflow::VERSION
+  spec.name          = "intrxn"
+  spec.version       = Intrxn::VERSION
   spec.authors       = ["Jake Stetser"]
   spec.email         = ["jake@wideopenspac.es"]
 
   spec.summary       = %q{A simple workflow library!}
-  spec.homepage      = "https://github.com/wideopenspaces/interflow"
+  spec.homepage      = "https://github.com/wideopenspaces/intrxn"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.

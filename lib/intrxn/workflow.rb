@@ -1,4 +1,4 @@
-module Interflow
+module Intrxn
   class Workflow
     attr_reader :context
 
