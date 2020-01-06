@@ -1,4 +1,5 @@
 class TestWorkFlow < Intrxn::Workflow
+  transactions true
   interactions :test_me, :fix_me, :make_me_fast, prefix: 'test'
 end
 
@@ -12,6 +13,10 @@ RSpec.describe Intrxn::Workflow do
 
     it 'has a prefix' do
       expect(subject.instance_variable_get(:@prefix)).to eq('test')
+    end
+
+    it 'has transactions enabled' do
+      expect(subject.instance_variable_get(:@transactions)).to be_truthy
     end
   end
 
