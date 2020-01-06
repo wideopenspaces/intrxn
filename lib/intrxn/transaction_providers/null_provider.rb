@@ -1,9 +1,11 @@
-module TransactionProviders
-  class NullTransactionProvider
-    def self.transaction(&block)
-      yield
+module Intrxn
+  module TransactionProviders
+    class NullTransactionProvider
+      def self.transaction(&block)
+        yield
+      end
     end
-  end
 
-  Null = TransactionProvider.new(NullTransactionProvider, :transaction)
+    Null = TransactionProvider.new(NullTransactionProvider, :transaction)
+  end
 end
