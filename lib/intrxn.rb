@@ -24,7 +24,7 @@ module Intrxn
     # By default, when used within Rails, ActiveRecord::Base will provide transactions.
     # Outside of Rails, Null TransactionProvider simply runs the block without transactions.
     def transaction_provider
-      @transaction_provider ||= if const_defined?(TransactionProviders::ActiveRecord)
+      @transaction_provider ||= if TransactionProviders.const_defined?('ActiveRecord')
                                   TransactionProviders::ActiveRecord
                                 else
                                   TransactionProviders::Null
