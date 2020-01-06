@@ -1,3 +1,5 @@
+require 'active_support/inflector'
+
 module Intrxn
   class Workflow
     attr_reader :context
@@ -10,9 +12,6 @@ module Intrxn
     end
 
     def self.transactions(toggle = false)
-      if toggle && !const_defined?('ActiveRecord')
-        raise ActiveRecordMissing, "Transactions cannot be enabled unless ActiveRecord is present"
-      end
       @transactions = toggle
     end
 
@@ -41,7 +40,7 @@ module Intrxn
 
     def transactionally(&block)
       transactions_enabled = self.class.instance_variable_get(:@transactions)
-      transactions_enabled ? ActiveRecord::Base.transaction { yield } : yield
+      transactions_enabled ? Intrxn.transaction_provider.transaction { yield } : yield
     end
 
     def objectify(prefix, intrxn)
