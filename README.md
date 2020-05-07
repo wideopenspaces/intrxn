@@ -1,5 +1,7 @@
 # intrxn
 
+![Ruby](https://github.com/wideopenspaces/intrxn/workflows/Ruby/badge.svg?branch=master)
+
 **intrxn** is a concise library for encapsulating complex sequential interactions into workflows. 
 
 It supplies some basic validations and error-checking and then tries to stay out of your way!
